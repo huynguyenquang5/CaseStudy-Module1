@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bảng tính tiền điện</title>
+    <script src="CaseStudy-Tinhtiendien.js"></script>
+    <link rel="stylesheet" href="CaseStudy-Tinhtiendien.css">
+</head>
+<body onload="checkAdmin()">
+<header>
+    <img alt="whatever" src="https://www.evn.com.vn/images/logoevn3.png">
+</header>
+<div class="menu-bar">
+<ul>
+    <li id="header"></li>
+    <li><a href="CaseStudy-register.html"> Đăng ký</a></li>
+</ul>
+</div>
+<h2>Các thông số cần nhập:</h2>
+<p>Tháng: <label><select id="month">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+</select></label></p>
+<p><label for="number">Điện năng tiêu thụ:  <label><input type="number" id="number" style="width: auto"/></label></label></p>
+<label><input type="button" onclick="electricTotal();addMonth()" value="Kết quả"/></label>
+<br>
+<br>
+<table id="price">
+    <tr id="tr1">
+        <td></td>
+        <td>ĐƠN GIÁ THEO QĐ 648/QĐ-BCT (đồng/kWh)</td>
+        <td>SẢN LƯỢNG (kWh)</td>
+        <td>THÀNH TIỀN (đồng)</td>
+    </tr>
+    <tr>
+        <td>Bậc thang 1</td>
+        <td>1,678</td>
+        <td>50</td>
+        <td><span id="ladder1"></span></td>
+    </tr>
+    <tr>
+        <td>Bậc thang 2</td>
+        <td>1,734</td>
+        <td>50</td>
+        <td><span id="ladder2"></span></td>
+    </tr>
+    <tr>
+        <td>Bậc thang 3</td>
+        <td>2,014</td>
+        <td>100</td>
+        <td><span id="ladder3"></span></td>
+    </tr>
+    <tr>
+        <td>Bậc thang 4</td>
+        <td>2,536</td>
+        <td>100</td>
+        <td><span id="ladder4"></span></td>
+    </tr>
+    <tr>
+        <td>Bậc thang 5</td>
+        <td>2,834</td>
+        <td>100</td>
+        <td><span id="ladder5"></span></td>
+    </tr>
+    <tr>
+        <td>Bậc thang 6</td>
+        <td>2,927</td>
+        <td>0</td>
+        <td><span id="ladder6"></span></td>
+    </tr>
+</table>
+<p>Thành tiền(VND): <span id="result"></span></p>
+<p>Tiền điện chưa thuế (VND): <span id="resultBeforeTax"></span></p>
+<p>Thuế GTGT (8%) tiền điện (VND): <span id="taxInclude"></span></p>
+<p>Tổng cộng tiền thanh toán (VND): <span id="resultAfterTax"></span></p>
+<div>
+        <h2 onclick="drawTable()">So sánh tiền điện</h2>
+    <div>
+    <table id="compare">
+        <tr id="tr2">
+            <td>Tháng</td>
+            <td>Số điện đã dùng (kWh)</td>
+            <td>Tổng tiền điện</td>
+            <td>So với tháng trước</td>
+            <td></td>
+        </tr>
+    </table>
+    </div>
+        <div>
+            <div id="add"></div>
+        </div>
+    <div id="electricInformation"></div>
+</div>
+<footer>
+    <p>© Bản quyền thuộc về Tập đoàn Điện lực Việt Nam<br>
+        Điện thoại: 024.66946789&nbsp; &nbsp; &nbsp;*&nbsp; &nbsp;&nbsp;Fax: 024.66946666<br>
+        Người chịu trách nhiệm chính: Ông Võ Quang Lâm – Phó Tổng giám đốc Tập đoàn Điện lực Việt Nam<br>
+        Giấy phép số:&nbsp;1908/GP-TTĐT do Sở Thông tin và Truyền thông Hà Nội cấp ngày 15/5/2018.<br>
+        Thực hiện: Trung tâm Thông tin Điện lực. Đ/c: Số 11 Cửa Bắc, phường Trúc Bạch, quận Ba Đình, Hà Nội.<br>
+        Điện thoại: 024.66946731 * Fax: 024.37725192 - Email: banbientapwebevn.eic@evn.com.vn - banbientapwebevn.eic@gmail.com<br>
+        Thiết kế và phát triển bởi&nbsp;EVNICT. Thông tin trích từ trang thông tin điện tử này yêu cầu ghi rõ từ nguồn www.evn.com.vn</p>
+</footer>
+</body>
+</html>
